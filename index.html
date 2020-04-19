@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<title>PWA-3</title>
+	<link rel="stylesheet" href="./bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="manifest" href="./manifest.json">
+	<!-- vue.js　-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>  
+</head>
+<body>
+	<div class="container">
+		<h1>PWA-3 : ver 4</h1>
+		<hr />
+		<div id="app">
+			<p>{{ message }}</p>
+			<button v-on:click="proc_click">Count</button>
+		</div>
+	</div>
+<!-- --->
+<script>
+"use strict";
+registSW();
+function registSW() {
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', function () {
+		navigator.serviceWorker.register('./sw.js', { scope: './' }).then(function (registration) {
+			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+		}, function (err) {
+			console.log('ServiceWorker registration failed: ', err);
+		});
+		});
+	}
+}
+// vue.jsの設定関係
+var app = new Vue({
+	el: '#app',
+	data: {
+		message: 'Hello!!',
+		count : 0
+	},
+	methods: {
+		proc_click: function () {
+			this.count = this.count +1;
+			this.message = "count : " + this.count;
+		}
+	}
+});
+</script>
+</body>
+</html>
