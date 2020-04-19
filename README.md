@@ -13,6 +13,7 @@ PWA (Progressive Web Apps) HTML/JS sample, + vue.js
 ***
 ### blog
 
+https://knaka0209.hatenablog.com/entry/pwa1
 
 ***
 
