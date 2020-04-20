@@ -8,7 +8,7 @@
 
 ***
 
-PWA (Progressive Web Apps) HTML/JS sample, + vue.js
+PWA (Progressive Web Apps) HTML/JS sample, + vue.js 
 
 ***
 ### blog
